@@ -1,4 +1,4 @@
-package javaproject;
+package java;
 
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
@@ -7,20 +7,35 @@ import java.util.Calendar;
 public class Main7 {
 
 	public static void main(String[] args) {
-		int cnt[] =new int [26];
-		Scanner sc = new Scanner(System.in);
-		String str = sc.nextLine();
+		import java.util.Arrays;
+		import java.util.Scanner;
 
-		for (int i = 0; i < str.length(); i++) {
-			char ch = str.toUpperCase().charAt(i);
-			if(Character.isLetter(ch)){
-				cnt[ch - 'A']++;
+		public class Main7 {
+
+			public static void main(String[] args) {
+				String str;
+				int ja =0 , mo =0;
+				Scanner scan = new Scanner(System.in);
+				str = scan.nextLine();
+				for(int i = 0; i <str.length();i++) {
+					String subStr = str.substring(i,i+1);
+					char subChar = str.charAt(i);
+					if(subStr.equalsIgnoreCase("a")== true||
+							subStr.equalsIgnoreCase("e")== true||
+							subStr.equalsIgnoreCase("i")== true||
+							subStr.equalsIgnoreCase("o")== true||
+							subStr.equalsIgnoreCase("u")== true) {
+						mo++;
+					}
+					else if(('a'<= subChar && subChar <='z' )||('A'<= subChar && subChar <= 'Z')) {
+						ja++
+					}
+					System.out.println("자음 :" + ja + "개"\n "모음 : " + mo + "개");
+				}
+			
+			
+			
 			}
-		}
-
-		for(int i=0; i <26; i++) {
-			if (cnt[i] >= 1) {
-				System.out.println((char)(65 + i)+ " - " +cnt[i]);
 			}
 		}
 	}
